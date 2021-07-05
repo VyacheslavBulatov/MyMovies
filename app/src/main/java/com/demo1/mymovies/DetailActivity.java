@@ -95,7 +95,11 @@ public class DetailActivity extends AppCompatActivity {
             finish();
         }
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        movie = viewModel.getMovieById(id);
+        if(intent.hasExtra("isFavourite") && intent.getBooleanExtra("isFavourite", false)) {
+            movie = viewModel.getFavouriteMovieById(id);
+        } else {
+            movie = viewModel.getMovieById(id);
+        }
         Picasso.get().load(movie.getBigPosterPath()).into(imageViewBigPoster);
         textViewTitle.setText(movie.getTitle());
         textViewOriginalTitle.setText(movie.getOriginalTitle());
