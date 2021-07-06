@@ -13,4 +13,6 @@
     <string name="main">Главная</string>
     <string name="favourite">Избранное</string>
     <string name="start_trailer">Запустить трейлер</string>
+    <string name="bigPoster">Постер фильма</string>
+    <string name="favourite_button">избранное</string>
 </resources>
